@@ -17,6 +17,7 @@ export const Dashboard: React.FC = () => {
       </section>
     );
   }
+  
 
   const name = (profile) ? profile.getString(foaf.name) : null;
   const title = (name)
