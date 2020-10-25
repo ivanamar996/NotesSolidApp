@@ -1,0 +1,262 @@
+html,body{
+  height: 100vp;
+  background-color: rgb(236, 240, 239);
+}
+
+.divShadow{
+    box-shadow: 2px 2px 2px 2px #c4bfbf;
+}
+
+.title{
+    font-size: 15px;
+    font-style: italic;
+    color: gray;
+}
+
+#notepadTitleID::placeholder{
+    font-weight: inherit;
+    font-size: large;
+    color: rgb(117, 117, 117);
+}
+
+#tagID::placeholder{
+  font-weight: inherit;
+  font-size: large;
+  color: rgb(117, 117, 117);
+}
+
+#noteTitleID::placeholder{
+  font-weight: inherit;
+  font-size: large;
+  color: rgb(117, 117, 117);
+}
+
+#textareaNote::placeholder{
+  font-weight: inherit;
+  font-size: large;
+  color: rgb(117, 117, 117); 
+}
+
+.wrapper {
+    margin-top: 10px;
+    display: flex;
+  }
+  
+.left {
+    margin-left: 100px;
+    flex: 0 0 25%;
+}
+
+.left:hover{
+    box-shadow: 2px 2px 2px 2px #c4bfbf;
+}
+
+.middle{
+    margin-left:50px;
+    flex: 0 0 25%;
+}
+.middle:hover{
+    box-shadow: 2px 2px 2px 2px #c4bfbf;
+}
+.right {
+    margin-left:50px;
+    flex: 0 0 25%;
+}
+.right:hover{
+    box-shadow: 2px 2px 2px 2px #c4bfbf;
+}
+.divNotepod{
+    border: '2px solid red'
+}
+
+.popup-box {
+    position: fixed;
+    background: #00000050;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+   
+  .box {
+    position: relative;
+    width: 40%;
+    margin: 0 auto;
+    height: auto;
+    margin-top: calc(100vh - 85vh - 20px);
+    background: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    border: 1px solid #999;
+    overflow: auto;
+  }
+   
+  .close-icon {
+    content: 'x';
+    cursor: pointer;
+    position: fixed;
+    right: calc(30% - 25px);
+    top: calc(100vh - 85vh - 33px);
+    background: #ededed;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    line-height: 20px;
+    text-align: center;
+    border: 1px solid #999;
+    font-size: 20px;
+  }
+
+  .flex-box-2 {
+    display:flex;
+    justify-content: flex-end;
+    background-color: rgb(230, 230, 225);
+    height: 60px;
+    margin-left: -30px;
+    margin-bottom: -20px;
+    margin-top: -10px;
+    margin-right: -20px;
+  }
+
+  .transparentBtn{
+    margin-top: 10px;
+    height: 40px;
+    width: 100px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    font-size: medium;
+    font-weight: bold;
+    color: rgb(70, 70, 70);
+  }
+
+  .transparentBtn:hover{
+    background-color: rgb(209, 209, 209);
+  }
+
+  .backToNotepadsBtn{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 10;
+    height: 40px;
+    width: 100%;
+    background-color: rgb(197, 196, 196);
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    font-size: medium;
+    color: rgb(0, 0, 0);
+  }
+
+  .backToNotepadsBtn:hover{
+    background-color: rgb(209, 209, 209);
+  }
+
+  .flex-box-note-2 {
+    display:flex;
+    justify-content: flex-end;
+    background-color: rgb(230, 230, 225);
+    height: 50px;
+    margin-top: 3px;
+  }
+
+  .saveCancelNoteBtn{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    font-size: medium;
+    font-weight: bold;
+    color: rgb(70, 70, 70);
+  }
+
+  .saveCancelNoteBtn:hover{
+    background-color: rgb(209, 209, 209);
+  }
+
+  .cardBtn{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    font-size: medium;
+    font-weight: normal;
+  }
+
+  .cardBtn:hover{
+    background-color: rgb(236, 236, 236);
+  }
+
+  .d-flex{
+    display: flex
+ }
+ .Xbtn{
+    border: none;
+    overflow: hidden;
+    outline:none;
+    font-size: medium;
+    margin-left: 3px;
+    background-color: rgb(247, 245, 245);
+
+ }
+
+ .Xbtn:hover{
+  background-color: rgb(209, 209, 209);
+ }
+
+ .tagClass{
+   background-color: rgb(190, 227, 231);
+   margin-left: 3px;
+   font-weight: bold;
+   display: inline;
+   padding: 0px 25px 3px 5px ;
+ }
+
+.buttonXTag {
+  margin-left: -10px;
+  width: 10px;
+  height: 25px;
+  font-size: 10px;
+  border: none;
+  font-weight: bold;;
+  padding: 2px 0px 0px 0px;
+}
+.buttonXTag:hover{
+  background-color: rgb(209, 209, 209);
+ }
+
+.divTags{
+  display:inline;
+  justify-content: flex-end;
+}
+
+.searchXBtn{
+    margin-left: 1130px;
+    padding: 7px;
+    background-color:  rgb(243, 243, 243);
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    font-size: medium;
+    color: rgb(70, 70, 70);
+}
+
+.searchXBtn:hover{
+  background-color:  rgb(209, 209, 209);
+ }
+
+
+

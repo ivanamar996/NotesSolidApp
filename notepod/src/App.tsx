@@ -4,6 +4,7 @@ import { Dashboard } from './components/Dashboard';
 import { PodConnecter } from './components/PodConnecter';
 
 const App: React.FC = () => {
+
   return <>
     <React.StrictMode>
       <LoggedOut>

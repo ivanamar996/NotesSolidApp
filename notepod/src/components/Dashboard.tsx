@@ -1,40 +1,42 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { LogoutButton, useWebId } from '@solid/react';
-import { foaf } from 'rdf-namespaces';
-import { useProfile } from '../hooks/useProfile';
-import { NotesList } from './NotesList';
-import { getPodData } from '../services/getPodData';
+import { NotepadsList } from './notepad/NotepadsList';
+import { NotesList } from './note/NotesList';
+import SolidBackend from '../services/SolidBackend';
+import Utils from '../services/Utils';
+import '../App.scss';
+import NotepadModel from '../models/Notepad';
 
 export const Dashboard: React.FC = () => {
+
+  const [openNotes, setOpenNotes] = React.useState(false);
+  const [notepad, setNotepad] = React.useState<NotepadModel>();
+
   const webId = useWebId();
-  const podData = React.useMemo(() => (typeof webId === 'string') ? getPodData(webId) : undefined, [webId]);
-  const profile = useProfile(podData);
 
-  if (!podData) {
-    return (
-      <section className="section">
-        <p className="content">Loading data&hellip;</p>
-      </section>
-    );
+  useEffect(() => {
+    if (webId != undefined)
+      createFolders(webId);
+  }, [webId]);
+
+  async function createFolders(webId: any) {
+    const baseUrl = Utils.getBaseUrl(webId);
+    await SolidBackend.createAppFolders(webId, baseUrl + 'public/solidapp/');
   }
-  
 
-  const name = (profile) ? profile.getString(foaf.name) : null;
-  const title = (name)
-    ? `${name}'s notes`
-    : 'Notes';
+  function handleOpenNotes(notepad: NotepadModel) {
+    setOpenNotes(!openNotes);
+    setNotepad(notepad);
+  }
 
   return <>
     <div className="columns">
-      <section className="section">
-        <h1 className="title">
-          {title}
-        </h1>
-      </section>
-      <div className="column has-text-right" style={{marginTop:50, marginRight:30}}>
+      <div className="column has-text-right" style={{ marginTop: 40, marginRight: 20 }} >
         <LogoutButton className="button" />
       </div>
     </div>
-    <NotesList podData={podData} />
+    {!openNotes && <NotepadsList handleOpenNotes={handleOpenNotes} webId={webId as string} />}
+    {openNotes && <NotesList webId={webId as string} notepad={notepad as NotepadModel} /> }
+    {openNotes && <section className="section"><button className="backToNotepadsBtn" onClick={(e)=> setOpenNotes(false)}>Back to notepads</button></section>}
   </>;
 };
