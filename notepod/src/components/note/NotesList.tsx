@@ -47,14 +47,14 @@ export const NotesList: React.FC<Props> = (props) => {
       },
       []
     )
+
   function searchNotes(criteria:string){
-    setNotes([]);
-    if(notesArray.length>0){
+      setNotes([]);
       notesArray.forEach((note:NoteModel)=>{
-        if(note.title.includes(criteria))
+        if(note.title.includes(criteria)){
           setNotes(array=>[...array,note]);
-      });
-    }
+        }
+    });
   }
 
   function cancelSearchNote(){

@@ -17,9 +17,10 @@ export const NotepadsList: React.FC<Props> = (props) => {
 
   if (props.webId != undefined && notepadsArray.length == 0) {
     getNotepads(props.webId).then(function (parsedData) {
-      if (parsedData.length > 0)
+      if (parsedData.length > 0){
         setNotepadsArray(parsedData);
         setNotepads(parsedData);
+      }
     });
   }
 
